@@ -1,0 +1,108 @@
+* {box-sizing: border-box;}
+
+body {
+display:flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+}
+
+h1{
+text-align: center;
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 600;
+font-size: 56px;
+line-height: 66px;
+margin-top:25px;
+}
+
+p {
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 30px;
+}
+
+.customInpt{
+border:#1F1235 2px solid !important;
+
+}
+
+
+.pkmnBox{
+display:flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+}
+
+#pkmnName {
+position:absolute;
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 28px;
+line-height: 22px;
+letter-spacing: -0.408px;
+margin-bottom: 150px;
+text-align: center;
+
+}
+
+
+.pkmnImg {
+position: relative;
+box-sizing:content-box;
+height:103px;
+width: 103px;
+border: black 2px solid;
+padding: 98px 89px 54px 91px;
+background-color:#FBDD74;
+}
+
+.vertSearch{
+    display:flex;
+    flex-direction: column;
+
+    margin: 25px;
+
+}
+
+.customBtn{
+    margin-top: 200px;
+    text-align: center;
+    position: relative;
+}
+
+.customSearch{
+font-family: 'Roboto';
+font-style: normal;
+color: #1f1235;
+font-weight: 600;
+font-size: 20px;
+line-height: 28px;
+    
+background: #FF6E6C;
+border: 1px solid #1F1235;
+/* 2dp | Button */
+
+box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.16), 0px 2px 4px rgba(0, 0, 0, 0.12), 0px 1px 8px rgba(0, 0, 0, 0.1);
+border-radius: 8px;
+}
+
+
+
+
+/* Hides text */
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
