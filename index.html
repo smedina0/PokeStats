@@ -19,16 +19,20 @@
     <div class="centerAlign">
         <h1>PokeStats</h1>
         <div class="vertSearch">
-            <p>Search for a pokemon to see its stats and damage output.</p>
+            <p>Search for a pokemon to see its stats and damage output. <br><br>Note - this is only applicable up to Pokemon Sword and Shield!</p>
+            <form>
             <div class="form-floating mb-3">
-                <input class="form-control customInpt" id="floatingInput" placeholder="name@example.com">
+            
+                <input type="text" class="form-control customInpt" id="floatingInput" placeholder="Search Pokemon">
                 <label for="floatingInput">Search Pokemon</label>
+                <button class="customSearch btn btn-secondary btn-lg" type="submit">Search</button>
             </div>
+        </form>
 
-            <button class="customSearch btn btn-secondary btn-lg" type="submit">Search</button>
+        
         </div>
         <div class="pkmnBox">
-            <img class="pkmnImg" src="images/pikachuSillouhette.png">
+            <img id="pokemonImg" class="pkmnImg" src="images/pikachuSillouhette.png">
             <h2 id="pkmnName"> Whose that pokemon? </h2>
         </div>
 
@@ -39,60 +43,84 @@
                 <h4 class="accordion-header accStyle" id="flush-headingOne">
                     <button class="accordion-button collapsed accStyle" type="button" data-bs-toggle="collapse"
                         data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                        HP Stats
+                        HP Stat
                     </button>
                 </h4>
                 <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
                     data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">Search for a Pokemon to see Stats</div>
+                    <div class="accordion-body">
+                        <p id="hp">Search for a Pokemon to see Stats</p>
+                    </div>
                 </div>
             </div>
             <div class="accordion-item">
                 <h4 class="accordion-header accStyle" id="flush-headingTwo">
                     <button class="accordion-button collapsed accStyle" type="button" data-bs-toggle="collapse"
                         data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                        Attack Stats
+                        Attack Stat
                     </button>
                 </h4>
                 <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
                     data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">Search for a Pokemon to see Stats</div>
+                    <div class="accordion-body">
+                        <p id="atk">Search for a Pokemon to see Stats</p>
+                    </div>
                 </div>
             </div>
             <div class="accordion-item">
                 <h4 class="accordion-header accStyle" id="flush-headingThree">
                     <button class="accordion-button collapsed accStyle" type="button" data-bs-toggle="collapse"
                         data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                        Defense Stats
+                        Defense Stat
                     </button>
                 </h4>
                 <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
                     data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">Search for a Pokemon to see Stats</div>
+                    <div class="accordion-body">
+                        <p id="def">Search for a Pokemon to see Stats</p>
+                    </div>
                 </div>
             </div>
             <div class="accordion-item">
                 <h4 class="accordion-header" id="flush-headingFour">
                     <button class="accordion-button collapsed accStyle" type="button" data-bs-toggle="collapse"
                         data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
-                        Special Attack Stats
+                        Special Attack Stat
                     </button>
                 </h4>
                 <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour"
                     data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">Search for a Pokemon to see Stats</div>
+                    <div class="accordion-body">
+                        <p id="specialAtk">Search for a Pokemon to see Stats</p>
+                    </div>
                 </div>
             </div>
             <div class="accordion-item">
                 <h4 class="accordion-header accStyle" id="flush-headingFive">
                     <button class="accordion-button collapsed accStyle" type="button" data-bs-toggle="collapse"
                         data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
-                        Special Defense Stats
+                        Special Defense Stat
                     </button>
                 </h4>
                 <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive"
                     data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">Search for a Pokemon to see Stats</div>
+                    <div class="accordion-body">
+                        <p id="specialDef">Search for a Pokemon to see Stats</p>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h4 class="accordion-header accStyle" id="flush-headingSix">
+                    <button class="accordion-button collapsed accStyle" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+                       Speed Stat
+                    </button>
+                </h4>
+                <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        <p id="speed">Search for a Pokemon to see Stats</p>
+                    </div>
                 </div>
             </div>
         </div>
