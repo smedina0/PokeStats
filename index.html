@@ -23,22 +23,33 @@
             <form>
             <div class="form-floating mb-3">
             
-                <input type="text" class="form-control customInpt" id="floatingInput" placeholder="Search Pokemon">
+                <input type="text" class="form-control" id="floatingInput" placeholder="Search Pokemon">
                 <label for="floatingInput">Search Pokemon</label>
-                <button class="customSearch btn btn-secondary btn-lg" type="submit">Search</button>
+                <button class="customSearch btn btn-secondary btn-lg searchW" type="submit">Search</button>
             </div>
         </form>
 
         
         </div>
         <div class="pkmnBox">
-            <img id="pokemonImg" class="pkmnImg" src="images/pikachuSillouhette.png">
+            <img id="pokemonImg" class="pkmnImg" src="images/pikachuSillouhette.png" alt+"">
             <h2 id="pkmnName"> Whose that pokemon? </h2>
         </div>
 
         <h3>Base Stats</h3>
+        <ul>
+            <li> <p><b>HP:&nbsp; </b> <span id="hp"></span></p></li>
+            <li><p><b>Attack:&nbsp; </b> <span id="atk"></span></p></li>
+            <li><p><b>Defense:&nbsp; </b> <span id="def"></span></p></li>
+            <li><p><b>Special Attack:&nbsp; </b> <span id="specialAtk"></span></p></li>
+            <li><p><b>Special Defense:&nbsp; </b> <span id="specialDef"></span></p></li>
+            <li><p><b>Speed:&nbsp; </b> <span id="speed"></span></p></li>
+        </ul>
 
-        <div class="accordion accordion-flush" id="accordionFlushExample">
+        
+        <!-- Accordions have been removed but I have kept the code here for them just in case 
+            
+            <div class="accordion accordion-flush" id="accordionFlushExample">
             <div class="accordion-item">
                 <h4 class="accordion-header accStyle" id="flush-headingOne">
                     <button class="accordion-button collapsed accStyle" type="button" data-bs-toggle="collapse"
@@ -123,7 +134,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <h3>Type Effectiveness</h3>
         <p>This section may be added after base requirement has been met</p>

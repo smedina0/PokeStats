@@ -32,8 +32,8 @@ $.ajax({
       console.log(data)
       statSet();
       weakStrengthSet();
+      determineTypes();
 
-      
     },
     (error) => {
       console.log("bad request: ", error)
@@ -52,6 +52,25 @@ $.ajax({
     $pokemonImg.attr("src",pokemonData.sprites.front_default);
   }
 
+
+  // for each to assign type to variable
   function weakStrengthSet() {
-    $pokemonType = pokemonData.types[0].type.name;
+ 
+    $pokemonType1 = pokemonData.types[0].type.name;
+    $pokemonType2 = pokemonData.types[1].type.name;
+  }
+
+  function determineTypes() {
+
+    console.log("test" + pokemonData.types[0].type.name)
+ 
+    if(pokemonData.types.length = 1){
+      console.log($pokemonType1);
+    }
+  
+    if(pokemonData.types.length > 1){
+      console.log($pokemonType1);
+      console.log($pokemonType2); 
+       console.log($pokemonType1 + " and " + $pokemonType2);
+    }
   }
