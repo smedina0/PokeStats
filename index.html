@@ -23,7 +23,7 @@
             <form>
             <div class="form-floating mb-3">
             
-                <input type="text" class="form-control" id="floatingInput" placeholder="Search Pokemon">
+                <input type="text" class="form-control customInpt" id="floatingInput" placeholder="Search Pokemon">
                 <label for="floatingInput">Search Pokemon</label>
                 <button class="customSearch btn btn-secondary btn-lg searchW" type="submit">Search</button>
             </div>
@@ -136,31 +136,35 @@
             </div>
         </div> -->
 
-        <h3>Type Effectiveness</h3>
-        <p>Type: <span id="typed"></span></p>
-        <p>This section may be added after base requirement has been met</p>
+        <h3 ><span id="typed"></span>&nbsp; Type Effectiveness</h3>
+        <p style = "text-align: left;">This section works partially as expected. For single type pokemon - it's flawless. For dual type pokemon, there is some more difficult logic that would have taken longer to make possible. <p></p> <p style = "text-align: left;"> For now - consider calculating overall dual-type effectiveness by combining all damage type effectiveness. </p><br>
+        
         <h4>Receives Double Damage From:</h4>
 
 
-        <ul id = "doubleDamageList">
+        <ul class="typeLists" id = "doubleDamageList">
         </ul>
 
         <h4>Receives Half Damage From:</h4>
 
-        <ul id = "halfDamageList">
+        <ul class="typeLists" id = "halfDamageList">
         </ul>
 
-        <h4>Receives No Damage From</h4>
+        <h4>Receives No Damage From: </h4>
 
-        <ul id = "noDamageList">
+        <ul class="typeLists" id = "noDamageList">
         </ul>
 
-        <h4>Receives Regular Damage From</h4>
+        <h4>Receives Regular Damage From:</h4>
 
-        <ul id = "regularDamage">
+        <ul class="typeLists" id = "regularDamage">
          
         </ul>
+        <p>This page is dedicated to one of my best Friends - Paul James Irizarry</p>
     </div>
+
+  
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
     </script>

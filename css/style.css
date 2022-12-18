@@ -27,6 +27,7 @@ h3 {
     flex-direction: column;
     margin: 25px;
     border: #1F1235 2px solid;
+
 }
 
 p {
@@ -38,6 +39,7 @@ p {
     font-weight: 400;
     font-size: 24px;
     line-height: 30px;
+    margin-top:25px;
 }
 
 ul {
@@ -93,6 +95,7 @@ li p {
     justify-content: center;
     flex-direction: column;
     width: 90vw !important;
+    
 }
 
 .vertSearch {
@@ -159,9 +162,25 @@ li p {
     border-radius: 8px;
 }
 
+.typeLists{
+ list-style-type:disc;
+}
+
 *:focus {
 	box-shadow: 0 0 0px 2px white !important;
 	outline: dotted !important;
+}
+
+.searchW:focus {
+
+  color: black !important;
+  background-color: #FF6E6C;
+}
+
+.searchW:active {
+    box-shadow: 0 0 0px 6px white !important;
+	outline: dotted !important;
+    offset:5px !important;
 }
 
 
@@ -175,4 +194,14 @@ li p {
     padding: 0;
     position: absolute;
     width: 1px;
+}
+
+/* All Caps for types */
+
+#doubleDamageList,
+#halfDamageList,
+#noDamageList,
+#regularDamage,
+#typed {
+    text-transform: uppercase;
 }
