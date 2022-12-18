@@ -202,6 +202,13 @@ li p {
 #halfDamageList,
 #noDamageList,
 #regularDamage,
-#typed {
+#typed,
+#outputWeakness1,
+#outputWeakness2 {
     text-transform: uppercase;
+}
+
+#outputWeakness1,
+#outputWeakness2 {
+    font-size: 24px;
 }
