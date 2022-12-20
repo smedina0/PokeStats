@@ -577,41 +577,73 @@ if(pokemonData.types.length == 1){
 
 });
 } else if(pokemonData.types.length == 2){
-  // $typeOneMultiplier = "undefined";
-  for(const property in typeWeaknesses){
-    console.log(`${property}: ${typeWeaknesses[$pokemonType2][property]}`);
-    }
-  
-    $.each(typeWeaknesses[$pokemonType1], function(key, value2) {
-    
-  
-      $("#outputWeakness1").append("<li>" + key + ": " + value2 + "x </li>")
-     
-      $typeOneMultiplier = value2;
-      console.log("this " + $typeOneMultiplier)
-      
-      // console.log("this is type one multiplier in the first each function "+ $typeOneMultiplier)
-    });
 
-    $("#outputWeakness1").empty();
+  $("#outputWeakness1").empty();
+
+  
+  let type1 = typeWeaknesses[$pokemonType1]
+  let type2 = typeWeaknesses[$pokemonType2]
+  let damageResults = {}
+  
+  for (nameOfTheDamageType in type1) {
+    $("#outputWeakness2").append(`<li> ${nameOfTheDamageType}: ${damageResults[nameOfTheDamageType] = type1[nameOfTheDamageType] * type2[nameOfTheDamageType]}x </li>`);
+    
+  }
+
+
+
+
+
+
+  $("#outputWeakness1").empty();
+
+
+  //IGNORE
+  // // $typeOneMultiplier = "undefined";
+  // for(const property in typeWeaknesses){
+  //   console.log(`Type 2 value is ${property}: ${typeWeaknesses[$pokemonType2][property]}`);
+  //   }
+  // let i = 0;
+  //   $.each(typeWeaknesses[$pokemonType1], function(key, value2) {
+  //   console.log("this is i" + i)
+  // i+=1;
+  //     $("#outputWeakness1").append("<li>" + key + ": " + value2 + "x </li>")
+     
+  //     $typeOneMultiplier = value2;
+  //     console.log("function one fire value: " + $typeOneMultiplier)
+
+      
+  //     // console.log("this is type one multiplier in the first each function "+ $typeOneMultiplier)
+
+  //     $.each(typeWeaknesses[$pokemonType2], function(key2, value3) {
+
+  //       // console.log("this is type one multiplier in the second each function "+ $typeOneMultiplier)
+
+  //       // console.log("second value " + value);
+
+  //       // console.log(`${$typeOneMultiplier} * ${value}`);
+
+  //       console.log("function 2 fire value: " + $typeOneMultiplier)
+
+
+  //       
+        
+  //       if(i==1) {
+  //         console.log(`this is the value ${key2}: ${$typeOneMultiplier} * ${value3}`)
+  //         $("#outputWeakness2").append(`<li>${key2}: ${$typeOneMultiplier * value3}x </li>`);
+  //         return;
+  //       }
+      
+
+       
+  //   });
+
+    
     // $("#outputWeakness2").empty();
       
       
-      $.each(typeWeaknesses[$pokemonType2], function(key, value3) {
-
-        // console.log("this is type one multiplier in the second each function "+ $typeOneMultiplier)
-
-        // console.log("second value " + value);
-
-        // console.log(`${$typeOneMultiplier} * ${value}`);
-
-        console.log("this 2 " + $typeOneMultiplier)
-
-        $("#outputWeakness1").empty();
-        
-        
-        $("#outputWeakness2").append(`<li>${key}: ${$typeOneMultiplier * value3}x </li>`);
-  });
+    
+  // });
 
    
    
