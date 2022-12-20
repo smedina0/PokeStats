@@ -366,6 +366,13 @@ const typeWeaknesses = {
 }
 
 
+
+///temp
+
+
+
+const pkmnTypeOneArr = [];
+
 // END OF NEW CODE - IF SOMETHING BREAKS DELETE EVERYTHING ABOVE
 
 
@@ -559,40 +566,51 @@ if(pokemonData.types.length == 1){
   console.log(`${property}: ${typeWeaknesses[$pokemonType1][property]}`);
   }
   $("#outputWeakness1").empty();
+  $("#outputWeakness2").empty();
 
-  $.each(typeWeaknesses[$pokemonType1], function(key, value) {
+  $.each(typeWeaknesses[$pokemonType1], function(key, value1) {
   
   
 
-    $("#outputWeakness1").append("<li>" + key + ": " + value + "x </li>")
+    $("#outputWeakness1").append("<li>" + key + ": " + value1 + "x </li>")
    
 
 });
 } else if(pokemonData.types.length == 2){
+  // $typeOneMultiplier = "undefined";
   for(const property in typeWeaknesses){
     console.log(`${property}: ${typeWeaknesses[$pokemonType2][property]}`);
     }
   
-    $("#outputWeakness1").empty();
-  
-    $.each(typeWeaknesses[$pokemonType1], function(key, value1) {
-    
+    $.each(typeWeaknesses[$pokemonType1], function(key, value2) {
     
   
-      $("#outputWeakness1").append("<li>" + key + ": " + value1 + "x </li>")
+      $("#outputWeakness1").append("<li>" + key + ": " + value2 + "x </li>")
      
-      $typeOneMultiplier = value1;
+      $typeOneMultiplier = value2;
+      console.log("this " + $typeOneMultiplier)
+      
+      // console.log("this is type one multiplier in the first each function "+ $typeOneMultiplier)
     });
 
-      $("#outputWeakness2").empty();
+    $("#outputWeakness1").empty();
+    // $("#outputWeakness2").empty();
+      
+      
+      $.each(typeWeaknesses[$pokemonType2], function(key, value3) {
 
-      // console.log($typeOneMultiplier)
-      $.each(typeWeaknesses[$pokemonType2], function(key, value) {
-      
-      
-    
-        $("#outputWeakness2").append(`<li>${key}: ${value * $typeOneMultiplier}x </li>`);
-  
+        // console.log("this is type one multiplier in the second each function "+ $typeOneMultiplier)
+
+        // console.log("second value " + value);
+
+        // console.log(`${$typeOneMultiplier} * ${value}`);
+
+        console.log("this 2 " + $typeOneMultiplier)
+
+        $("#outputWeakness1").empty();
+        
+        
+        $("#outputWeakness2").append(`<li>${key}: ${$typeOneMultiplier * value3}x </li>`);
   });
 
    

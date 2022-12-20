@@ -46,117 +46,18 @@
             <li><p><b>Speed:&nbsp; </b> <span id="speed"></span></p></li>
         </ul>
 
-        
-        <!-- Accordions have been removed but I have kept the code here for them just in case 
-            
-            <div class="accordion accordion-flush" id="accordionFlushExample">
-            <div class="accordion-item">
-                <h4 class="accordion-header accStyle" id="flush-headingOne">
-                    <button class="accordion-button collapsed accStyle" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                        HP Stat
-                    </button>
-                </h4>
-                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
-                    data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">
-                        <p id="hp">Search for a Pokemon to see Stats</p>
-                    </div>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h4 class="accordion-header accStyle" id="flush-headingTwo">
-                    <button class="accordion-button collapsed accStyle" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                        Attack Stat
-                    </button>
-                </h4>
-                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
-                    data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">
-                        <p id="atk">Search for a Pokemon to see Stats</p>
-                    </div>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h4 class="accordion-header accStyle" id="flush-headingThree">
-                    <button class="accordion-button collapsed accStyle" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                        Defense Stat
-                    </button>
-                </h4>
-                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
-                    data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">
-                        <p id="def">Search for a Pokemon to see Stats</p>
-                    </div>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h4 class="accordion-header" id="flush-headingFour">
-                    <button class="accordion-button collapsed accStyle" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
-                        Special Attack Stat
-                    </button>
-                </h4>
-                <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour"
-                    data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">
-                        <p id="specialAtk">Search for a Pokemon to see Stats</p>
-                    </div>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h4 class="accordion-header accStyle" id="flush-headingFive">
-                    <button class="accordion-button collapsed accStyle" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
-                        Special Defense Stat
-                    </button>
-                </h4>
-                <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive"
-                    data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">
-                        <p id="specialDef">Search for a Pokemon to see Stats</p>
-                    </div>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h4 class="accordion-header accStyle" id="flush-headingSix">
-                    <button class="accordion-button collapsed accStyle" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
-                       Speed Stat
-                    </button>
-                </h4>
-                <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix"
-                    data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">
-                        <p id="speed">Search for a Pokemon to see Stats</p>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-
         <h3 ><span id="typed"></span>&nbsp; Type Effectiveness</h3>
-
+        <p style = "text-align: left;">This section uses an object with each of the 18 types of damage effectiveness, and each of their 17 other damage calculations. </p><br>
         <ul class="typeLists" id = "outputWeakness1">
         </ul>
 
         <ul class="typeLists" id = "outputWeakness2">
         </ul>
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
+        <h3 ><span id="typed"></span>&nbsp; The below code uses logic from the API, but the API does not have information on pokemon that have two types.</h3>
+        
 
         <p style = "text-align: left;">This section works partially as expected. For single type pokemon - it's flawless. For dual type pokemon, there is some more difficult logic that would have taken longer to make possible. <p></p> <p style = "text-align: left;"> For now - consider calculating overall dual-type effectiveness by combining all damage type effectiveness. </p><br>
         
