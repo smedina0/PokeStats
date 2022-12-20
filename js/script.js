@@ -566,7 +566,7 @@ if(pokemonData.types.length == 1){
   console.log(`${property}: ${typeWeaknesses[$pokemonType1][property]}`);
   }
   $("#outputWeakness1").empty();
-  $("#outputWeakness2").empty();
+
 
   $.each(typeWeaknesses[$pokemonType1], function(key, value1) {
   
@@ -579,6 +579,7 @@ if(pokemonData.types.length == 1){
 } else if(pokemonData.types.length == 2){
 
   $("#outputWeakness1").empty();
+  $("#outputWeakness2").empty();
 
   
   let type1 = typeWeaknesses[$pokemonType1]
@@ -589,13 +590,9 @@ if(pokemonData.types.length == 1){
     $("#outputWeakness2").append(`<li> ${nameOfTheDamageType}: ${damageResults[nameOfTheDamageType] = type1[nameOfTheDamageType] * type2[nameOfTheDamageType]}x </li>`);
     
   }
-
-
-
-
-
-
   $("#outputWeakness1").empty();
+ 
+
 
 
   //IGNORE
