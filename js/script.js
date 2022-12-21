@@ -411,20 +411,20 @@ function handleGetData(event) {
   $('#halfDamageList').empty()
   $('#noDamageList').empty()
   $('#regularDamage').empty()
-  
-$.ajax({
+
+  $.ajax({
     url: "https://pokeapi.co/api/v2/pokemon/" + pokemonName,
   }).then(
     (data) => {
       pokemonData = data;
       statSet();
-    if(pokemonData.types.length == 1){
-      determineType1();
-    }
+      if (pokemonData.types.length == 1) {
+        determineType1();
+      }
 
-    if(pokemonData.types.length == 2){
-      determineType2();
-    }
+      if (pokemonData.types.length == 2) {
+        determineType2();
+      }
 
 
     },
@@ -434,43 +434,43 @@ $.ajax({
   )
 }
 
-  function statSet() {
-    $hp.text(pokemonData.stats['0'].base_stat);
-    $atk.text(pokemonData.stats['1'].base_stat);
-    $def.text(pokemonData.stats['2'].base_stat);
-    $specialAtk.text(pokemonData.stats['3'].base_stat);
-    $specialDef.text(pokemonData.stats['4'].base_stat);
-    $speed.text(pokemonData.stats['5'].base_stat);
-    $nameReplace.text(pokemonData.name)
-    $pokemonImg.attr("src",pokemonData.sprites.front_default);
-    
-  }
+function statSet() {
+  $hp.text(pokemonData.stats['0'].base_stat);
+  $atk.text(pokemonData.stats['1'].base_stat);
+  $def.text(pokemonData.stats['2'].base_stat);
+  $specialAtk.text(pokemonData.stats['3'].base_stat);
+  $specialDef.text(pokemonData.stats['4'].base_stat);
+  $speed.text(pokemonData.stats['5'].base_stat);
+  $nameReplace.text(pokemonData.name)
+  $pokemonImg.attr("src", pokemonData.sprites.front_default);
+
+}
 
 
-  // This function will only run if the pokemon has one type
-  function determineType1() {
+// This function will only run if the pokemon has one type
+function determineType1() {
 
-    $pokemonType1 = pokemonData.types[0].type.name;
-    console.log("pokemon first type is " + $pokemonType1);
-    $typed.text($pokemonType1);
-    $type1.text($pokemonType1);
+  $pokemonType1 = pokemonData.types[0].type.name;
+  console.log("pokemon first type is " + $pokemonType1);
+  $typed.text($pokemonType1);
+  $type1.text($pokemonType1);
 
-    // When the first type is determined, it's weaknesses will be determined
-    determineWeakness1()
-   
-  }
+  // When the first type is determined, it's weaknesses will be determined
+  determineWeakness1()
 
-  //this function will only run if the pokemon has two types
-  function determineType2() {
-    
-    $pokemonType1 = pokemonData.types[0].type.name;
-    $pokemonType2 = pokemonData.types[1].type.name;
-    console.log("pokemon with two types is " + $pokemonType1 + " and " + $pokemonType2);
-    $typed.text($pokemonType1 + "/" + $pokemonType2);
-    determineWeakness1();
-    determineWeakness2();
-  
-  }
+}
+
+//this function will only run if the pokemon has two types
+function determineType2() {
+
+  $pokemonType1 = pokemonData.types[0].type.name;
+  $pokemonType2 = pokemonData.types[1].type.name;
+  console.log("pokemon with two types is " + $pokemonType1 + " and " + $pokemonType2);
+  $typed.text($pokemonType1 + "/" + $pokemonType2);
+  determineWeakness1();
+  determineWeakness2();
+
+}
 
 
 // Type logic
@@ -487,7 +487,7 @@ function determineWeakness1() {
       // console.log(data)
 
       assignDamage1()
-  
+
     },
     (error) => {
       console.log("bad request: ", error)
@@ -514,43 +514,43 @@ function determineWeakness2() {
 
 // This determines the first type's values and assigns them to a location in the dom appropriate with their relative effectiveness
 
-function assignDamage1(){
+function assignDamage1() {
 
   // Initializing Damage Arrays for first type
 
   const doubleDamageArr1 = [];
   const halfDamageArr1 = [];
-  
+
 
   // This ensures all types that are not mentioned are indicated as "normal" damage
 
   $("#regularDamage").append(`<li> All other types</li>`)
-  
+
   // These for loops go through all damage relation arrays and lists the specific types associated with each damage change for the first type
 
   for (let i = 0; i < damageType1.damage_relations.double_damage_from.length; i++) {
     // console.log(damageType1.damage_relations.double_damage_from[i].name)  
- 
+
     $("#doubleDamageList").append(`<li>${damageType1.damage_relations.double_damage_from[i].name}</li>`);
 
     // This creates an array containing all double damage weaknesses to the first type
-  
-  //  doubleDamageArr1.push(damageType1.damage_relations.double_damage_from[i].name);
+
+    //  doubleDamageArr1.push(damageType1.damage_relations.double_damage_from[i].name);
   }
 
-   // logs the new array for testing
-   console.log("double damage array for first type is " + doubleDamageArr1);
+  // logs the new array for testing
+  console.log("double damage array for first type is " + doubleDamageArr1);
 
   for (let i = 0; i < damageType1.damage_relations.half_damage_from.length; i++) {
     $("#halfDamageList").append(`<li>${damageType1.damage_relations.half_damage_from[i].name}</li>`)
 
-     // This creates an array containing all half damage weaknesses to the first type
-  
-   halfDamageArr1.push(damageType1.damage_relations.half_damage_from[i].name);
+    // This creates an array containing all half damage weaknesses to the first type
+
+    halfDamageArr1.push(damageType1.damage_relations.half_damage_from[i].name);
   }
 
 
-  
+
   console.log("half damage array for first type is " + halfDamageArr1);
 
   for (let i = 0; i < damageType1.damage_relations.no_damage_from.length; i++) {
@@ -561,94 +561,94 @@ function assignDamage1(){
 
   let $typeOneMultiplier;
 
-if(pokemonData.types.length == 1){
-  for(const property in typeWeaknesses){
-  console.log(`${property}: ${typeWeaknesses[$pokemonType1][property]}`);
-  }
-  $("#outputWeakness1").empty();
+  if (pokemonData.types.length == 1) {
+    for (const property in typeWeaknesses) {
+      console.log(`${property}: ${typeWeaknesses[$pokemonType1][property]}`);
+    }
+    $("#outputWeakness1").empty();
 
 
-  $.each(typeWeaknesses[$pokemonType1], function(key, value1) {
-  
-  
-
-    $("#outputWeakness1").append("<li>" + key + ": " + value1 + "x </li>")
-   
-
-});
-} else if(pokemonData.types.length == 2){
-
-  $("#outputWeakness1").empty();
-  $("#outputWeakness2").empty();
-
-  
-  let type1 = typeWeaknesses[$pokemonType1]
-  let type2 = typeWeaknesses[$pokemonType2]
-  let damageResults = {}
-  
-  for (nameOfTheDamageType in type1) {
-    $("#outputWeakness2").append(`<li> ${nameOfTheDamageType}: ${damageResults[nameOfTheDamageType] = type1[nameOfTheDamageType] * type2[nameOfTheDamageType]}x </li>`);
-    
-  }
-  $("#outputWeakness1").empty();
- 
+    $.each(typeWeaknesses[$pokemonType1], function (key, value1) {
 
 
 
-  //IGNORE
-  // // $typeOneMultiplier = "undefined";
-  // for(const property in typeWeaknesses){
-  //   console.log(`Type 2 value is ${property}: ${typeWeaknesses[$pokemonType2][property]}`);
-  //   }
-  // let i = 0;
-  //   $.each(typeWeaknesses[$pokemonType1], function(key, value2) {
-  //   console.log("this is i" + i)
-  // i+=1;
-  //     $("#outputWeakness1").append("<li>" + key + ": " + value2 + "x </li>")
-     
-  //     $typeOneMultiplier = value2;
-  //     console.log("function one fire value: " + $typeOneMultiplier)
-
-      
-  //     // console.log("this is type one multiplier in the first each function "+ $typeOneMultiplier)
-
-  //     $.each(typeWeaknesses[$pokemonType2], function(key2, value3) {
-
-  //       // console.log("this is type one multiplier in the second each function "+ $typeOneMultiplier)
-
-  //       // console.log("second value " + value);
-
-  //       // console.log(`${$typeOneMultiplier} * ${value}`);
-
-  //       console.log("function 2 fire value: " + $typeOneMultiplier)
+      $("#outputWeakness1").append("<li>" + key + ": " + value1 + "x </li>")
 
 
-  //       
-        
-  //       if(i==1) {
-  //         console.log(`this is the value ${key2}: ${$typeOneMultiplier} * ${value3}`)
-  //         $("#outputWeakness2").append(`<li>${key2}: ${$typeOneMultiplier * value3}x </li>`);
-  //         return;
-  //       }
-      
+    });
+  } else if (pokemonData.types.length == 2) {
 
-       
-  //   });
+    $("#outputWeakness1").empty();
+    $("#outputWeakness2").empty();
 
-    
+
+    let type1 = typeWeaknesses[$pokemonType1]
+    let type2 = typeWeaknesses[$pokemonType2]
+    let damageResults = {}
+
+    for (nameOfTheDamageType in type1) {
+      $("#outputWeakness2").append(`<li> ${nameOfTheDamageType}: ${damageResults[nameOfTheDamageType] = type1[nameOfTheDamageType] * type2[nameOfTheDamageType]}x </li>`);
+
+    }
+    $("#outputWeakness1").empty();
+
+
+
+
+    //IGNORE
+    // // $typeOneMultiplier = "undefined";
+    // for(const property in typeWeaknesses){
+    //   console.log(`Type 2 value is ${property}: ${typeWeaknesses[$pokemonType2][property]}`);
+    //   }
+    // let i = 0;
+    //   $.each(typeWeaknesses[$pokemonType1], function(key, value2) {
+    //   console.log("this is i" + i)
+    // i+=1;
+    //     $("#outputWeakness1").append("<li>" + key + ": " + value2 + "x </li>")
+
+    //     $typeOneMultiplier = value2;
+    //     console.log("function one fire value: " + $typeOneMultiplier)
+
+
+    //     // console.log("this is type one multiplier in the first each function "+ $typeOneMultiplier)
+
+    //     $.each(typeWeaknesses[$pokemonType2], function(key2, value3) {
+
+    //       // console.log("this is type one multiplier in the second each function "+ $typeOneMultiplier)
+
+    //       // console.log("second value " + value);
+
+    //       // console.log(`${$typeOneMultiplier} * ${value}`);
+
+    //       console.log("function 2 fire value: " + $typeOneMultiplier)
+
+
+    //       
+
+    //       if(i==1) {
+    //         console.log(`this is the value ${key2}: ${$typeOneMultiplier} * ${value3}`)
+    //         $("#outputWeakness2").append(`<li>${key2}: ${$typeOneMultiplier * value3}x </li>`);
+    //         return;
+    //       }
+
+
+
+    //   });
+
+
     // $("#outputWeakness2").empty();
-      
-      
-    
-  // });
 
-   
-   
-     
-  
- 
 
-}
+
+    // });
+
+
+
+
+
+
+
+  }
 
 
 
@@ -663,26 +663,26 @@ if(pokemonData.types.length == 1){
 
 
 // This determines the second type's values and assigns them to a location in the dom appropriate with their relative effectiveness
-  function assignDamage2(){
+function assignDamage2() {
 
-    // Initializing Damage Arrays for second type
+  // Initializing Damage Arrays for second type
   const doubleDamageArr2 = [];
   const halfDamageArr2 = [];
 
 
 
   for (let i = 0; i < damageType2.damage_relations.double_damage_from.length; i++) {
- 
+
     // console.log(damageType2.damage_relations.double_damage_from[i].name)
     $("#doubleDamageList").append(`<li>${damageType2.damage_relations.double_damage_from[i].name}</li>`);
- 
-   
 
-// This creates an array containing all double damage weaknesses to the second type
-  
-doubleDamageArr2.push(damageType2.damage_relations.double_damage_from[i].name);
 
-// logs the new array for testing
+
+    // This creates an array containing all double damage weaknesses to the second type
+
+    doubleDamageArr2.push(damageType2.damage_relations.double_damage_from[i].name);
+
+    // logs the new array for testing
 
 
   }
@@ -693,9 +693,9 @@ doubleDamageArr2.push(damageType2.damage_relations.double_damage_from[i].name);
     $("#halfDamageList").append(`<li>${damageType2.damage_relations.half_damage_from[i].name}</li>`)
 
 
-     // This creates an array containing all half damage weaknesses to the first type
-  
-   halfDamageArr2.push(damageType1.damage_relations.half_damage_from[i].name);
+    // This creates an array containing all half damage weaknesses to the first type
+
+    halfDamageArr2.push(damageType1.damage_relations.half_damage_from[i].name);
 
   }
 
@@ -706,10 +706,7 @@ doubleDamageArr2.push(damageType2.damage_relations.double_damage_from[i].name);
     $("#noDamageList").append(`<li>${damageType2.damage_relations.no_damage_from[i].name}</li>`)
 
   }
-  
- 
-
-  }
 
 
-  
+
+}

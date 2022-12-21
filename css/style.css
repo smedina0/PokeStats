@@ -39,17 +39,17 @@ p {
     font-weight: 400;
     font-size: 24px;
     line-height: 30px;
-    margin-top:25px;
+    margin-top: 25px;
 }
 
 ul {
     list-style-type: none;
-   
+
 }
 
 li p {
-   display:block;
-   text-align: left;
+    display: block;
+    text-align: left;
 }
 
 .customInpt {
@@ -89,13 +89,13 @@ li p {
     background-color: #FBDD74;
 }
 
-.searchW{
-    display:flex;
+.searchW {
+    display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     width: 90vw !important;
-    
+
 }
 
 .vertSearch {
@@ -107,7 +107,7 @@ li p {
 }
 
 .accStyle {
-    display:flex;
+    display: flex;
     font-family: 'Roboto';
     font-style: normal;
     color: #1f1235;
@@ -116,14 +116,14 @@ li p {
     line-height: 28px;
     border: 1px solid #1F1235;
     border-radius: 8px;
-    margin:auto;
-    width:350px;
+    margin: auto;
+    width: 350px;
     justify-content: center;
 
 }
 
-.centerAlign{
-    width:90%;
+.centerAlign {
+    width: 90%;
 }
 
 
@@ -162,25 +162,25 @@ li p {
     border-radius: 8px;
 }
 
-.typeLists{
- list-style-type:disc;
+.typeLists {
+    list-style-type: disc;
 }
 
 *:focus {
-	box-shadow: 0 0 0px 2px white !important;
-	outline: dotted !important;
+    box-shadow: 0 0 0px 2px white !important;
+    outline: dotted !important;
 }
 
 .searchW:focus {
 
-  color: black !important;
-  background-color: #FF6E6C;
+    color: black !important;
+    background-color: #FF6E6C;
 }
 
 .searchW:active {
     box-shadow: 0 0 0px 6px white !important;
-	outline: dotted !important;
-    offset:5px !important;
+    outline: dotted !important;
+    offset: 5px !important;
 }
 
 
